@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalorieTrackerApp.SeleccionarIngredientePage"
+             Title="Seleccionar Alimentos">
+    <Grid RowDefinitions="*, Auto" Padding="20">
+
+        <CollectionView x:Name="ColeccionAlimentos" Grid.Row="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="8" Margin="0,0,0,10" Padding="15" BorderColor="LightGray" 
+                    BackgroundColor="Black">
+                        <Grid ColumnDefinitions="*, Auto">
+                           
+                            <VerticalStackLayout Grid.Column="0" VerticalOptions="Center">
+                                <Label Text="{Binding Nombre}" 
+                                FontSize="18" 
+                                TextColor="White"
+                                FontAttributes="Bold" />
+
+                                <Label Text="{Binding Calorias, StringFormat='{0} kcal'}" 
+                                FontSize="14" 
+                                TextColor="LightGray"/>
+                            </VerticalStackLayout>
+
+                            <CheckBox Grid.Column="1"
+                                  IsChecked="{Binding IsSelected}" 
+                                  VerticalOptions="Center" 
+                                  Margin="0,0,10,0" />
+
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <Label Text="No hay alimentos registrados" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource MutedLabelStyle}"/>
+            </CollectionView.EmptyView>
+        </CollectionView>
+
+        <Button Grid.Row="1" 
+                Text="Calcular" 
+                BackgroundColor="OrangeRed"
+                TextColor="White"
+                CornerRadius="8"
+                HeightRequest="45"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Clicked="btnCalcular" />
+          
+    </Grid>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalorieTrackerApp"
+             x:Class="CalorieTrackerApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Color x:Key="LightPrimaryText">#1C1B1F</Color>
+            <Color x:Key="DarkPrimaryText">#F4F4F4</Color>
+
+            <Color x:Key="LightSecondaryText">#605D62</Color>
+            <Color x:Key="DarkSecondaryText">#938F99</Color>
+
+            <Color x:Key="LightCardBackground">#FFFFFF</Color>
+            <Color x:Key="DarkCardBackground">#252429</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Light={StaticResource LightPrimaryText}, 
+                                                Dark={StaticResource DarkPrimaryText}}" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Light={StaticResource LightPrimaryText}, 
+                                                Dark={StaticResource DarkPrimaryText}}" />
+                <Setter Property="PlaceholderColor" 
+                        Value="{AppThemeBinding Light={StaticResource LightSecondaryText}, 
+                                                Dark={StaticResource DarkSecondaryText}}" />
+            </Style>
+
+            <Style x:Key="MutedLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Light={StaticResource LightSecondaryText}, 
+                                                Dark={StaticResource DarkSecondaryText}}" />
+            </Style>
+
+            <Style x:Key="AdaptiveFrameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" 
+                        Value="{AppThemeBinding Light={StaticResource LightCardBackground}, 
+                                                Dark={StaticResource DarkCardBackground}}" />
+                <Setter Property="BorderColor" 
+                        Value="{AppThemeBinding Light=#E0E0E0, Dark=#3A393E}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

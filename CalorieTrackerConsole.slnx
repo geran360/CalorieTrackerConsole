@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CalorieTrackerApp/CalorieTrackerApp.csproj" Id="518c570e-0ddd-4424-968d-20b3ba4a0027">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="CalorieTrackerConsole/CalorieTrackerConsole.csproj" />
+  <Project Path="CalorieTrackerData/CalorieTrackerData.csproj" Id="76ae4157-aedd-44c8-a747-e53cbb5e1347" />
+</Solution>

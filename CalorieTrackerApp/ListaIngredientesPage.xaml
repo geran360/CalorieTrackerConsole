@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalorieTrackerApp.ListaIngredientesPage"
+             Title="Ver Alimentos">
+
+    <Grid RowDefinitions="*, Auto" Padding="20">
+
+        <CollectionView x:Name="ColeccionAlimentos" Grid.Row="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="8" Margin="0,0,0,10" Padding="15" BorderColor="LightGray"
+                        BackgroundColor="Black">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <VerticalStackLayout Grid.Column="0" Spacing="5" VerticalOptions="Center">
+                                <Label Text="{Binding Nombre}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold"
+                                       TextColor="White"/>
+                                <Label Text="{Binding Calorias, StringFormat='{0} kcal'}" 
+                                       FontSize="14" 
+                                       TextColor="LightGray"/>
+                            </VerticalStackLayout>
+
+                            <Button Grid.Column="1"
+                                    Text="X"
+                                    BackgroundColor="Transparent"
+                                    TextColor="LightGray"
+                                    FontSize="18"
+                                    VerticalOptions="Center"
+                                    Clicked="btnEliminar"
+                                    CommandParameter="{Binding Id}" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <Label Text="No hay alimentos registrados" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Margin="0,0,0,160"
+                       FontSize="16" 
+                       Style="{StaticResource MutedLabelStyle}"/>
+            </CollectionView.EmptyView>
+        </CollectionView>
+
+        <Button Text="Actualizar Lista" 
+                BackgroundColor="Orange"
+                TextColor="White"
+                CornerRadius="8"
+                HeightRequest="45"
+                WidthRequest="200"
+                HorizontalOptions="Center" />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalorieTrackerApp.MainPage">
+
+    <StackLayout Orientation="Vertical" 
+                 Spacing="15" 
+                 Padding="20"
+                 VerticalOptions="Center">
+
+        <Image Source="logo_calorietracker.png"
+             HeightRequest="225"
+             WidthRequest="225"
+             HorizontalOptions="Center" />
+
+        <Label Text="Contador de Calorías"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="GhostWhite" />
+
+        <Button Text="Agregar Alimentos"
+                BackgroundColor="SeaGreen"
+                TextColor="White"
+                CornerRadius="8"
+                HeightRequest="45"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Clicked="btnAgregar" />
+
+        <Button Text="Ver Alimentos"
+                BackgroundColor="Orange"
+                TextColor="White"
+                CornerRadius="8"
+                HeightRequest="45"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Clicked="btnVer" />
+
+        <Button Text="Seleccionar Alimentos"
+                BackgroundColor="OrangeRed"
+                TextColor="White"
+                CornerRadius="8"
+                HeightRequest="45"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Clicked="btnSeleccionar" />
+
+    </StackLayout>
+</ContentPage>
